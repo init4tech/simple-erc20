@@ -1,0 +1,3 @@
+CounterTest:test() (gas: 2414)
+CounterTest:testBurn() (gas: 45069)
+CounterTest:testMint() (gas: 58119)
