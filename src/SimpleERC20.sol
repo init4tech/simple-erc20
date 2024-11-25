@@ -12,7 +12,8 @@ contract SimpleERC20 is ERC20Burnable, Ownable {
         ERC20(name, symbol)
     {}
 
-    function mint(address to, uint256 amount) external onlyOwner {
+    function mint(address to, uint256 amount) external onlyOwner returns (bool) {
         _mint(to, amount);
+        return true;
     }
 }
