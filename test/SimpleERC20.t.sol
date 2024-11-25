@@ -8,7 +8,13 @@ contract CounterTest is Test {
     SimpleERC20 public test;
 
     function setUp() public {
-        test = new SimpleERC20(address(this), "Test Token", "TEST");
+        test = new SimpleERC20(address(this), "Test Token", "TEST", 8);
+    }
+
+    function testMetadata() public view {
+        assertEq(test.name(), "Test Token");
+        assertEq(test.symbol(), "TEST");
+        assertEq(test.decimals(), 8);
     }
 
     function testMint() public {
